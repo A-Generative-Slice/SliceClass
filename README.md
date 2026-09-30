@@ -70,7 +70,7 @@ The platform delivers a cinematic, studio-grade learning experience grounded in 
 | **Video Engine** | Cloudflare Stream | Adaptive bitrate HLS streaming, tokenized URLs, 16:9 player. |
 | **Transactional Email** | Resend API / Nodemailer | 6-digit OTP email verification and self-service password reset. |
 | **Domain & DNS** | GoDaddy (`literiteacademy.com`) | Primary custom domain with automated Vercel SSL certificate. |
-| **Payment Gateway** | Stripe / Razorpay | Commercial checkout for $199 course access. |
+| **Payment Gateway** | Stripe / Razorpay | Commercial checkout for affordable < ₹300 course access (e.g. ₹199 / ₹299 via UPI & Cards). |
 
 ---
 

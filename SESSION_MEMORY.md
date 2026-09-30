@@ -1,7 +1,7 @@
 # 🧠 LiteRight Academy — Master Session Memory & Production Handoff
 
 > **Important for Next AI Session:**  
-> Read this file first when initiating a new session. It captures 100% of the research, live infrastructure setup, credentials, real-time costing, and pending implementation milestones established across all previous developer and stakeholder sessions.
+> Read this file first when initiating a new session. It captures 100% of the research, live infrastructure setup, credentials, real-time costing, confirmed subscriptions, commercial pricing strategy, and pending implementation milestones established across all previous developer and stakeholder sessions.
 
 ---
 
@@ -11,31 +11,32 @@
 * **Client / Parent Brand:** **Litelab Milano** (Architectural Lighting Vanguard, Milan, Italy)
 * **Design Philosophy:** "Litelab Royale" — Monochromatic luxury aesthetic (`#000000` / `#FFFFFF`), high contrast, heavy typography (Outfit + Inter), glassmorphism HUD cards, responsive 16:9 player.
 * **Course 1 Focus:** Comprehensive Architectural Lighting Design (Physics, Perception, Optics, Concepts, Documentation, Client Delivery).
-* **Repository:** [https://github.com/A-Generative-Slice/literight.git](https://github.com/A-Generative-Slice/literight.git)
-* **Local Workspace:** `D:\hussain\literite` *(Junctioned with `D:\hussain\literight`)*
+* **Repository:** [https://github.com/A-Generative-Slice/literite.git](https://github.com/A-Generative-Slice/literite.git)
+* **Local Workspace:** `D:\hussain\literite`
+* **Commercial Model:** **Affordable Mass-Market Education (< ₹300 per course, e.g. ₹199 to ₹299)**
 
 ---
 
 ## 2. Live Production Infrastructure & Service Directory
 
-All five core production services have been provisioned and verified:
+All core production services have been provisioned and locked in:
 
-| Service | Provider & Dashboard | Live URL / Endpoint | Credentials / Account | Status |
+| Service | Provider & Dashboard | Live URL / Endpoint | Credentials / Account | Plan / Status |
 |---|---|---|---|---|
 | **Custom Domain** | **GoDaddy** | `literiteacademy.com` / `www.literiteacademy.com` | GoDaddy Account (Active through Sep 2028) | 🟢 Live (SSL 🔒) |
-| **Frontend Web** | **Vercel** (`litelab` team) | **[https://www.literiteacademy.com](https://www.literiteacademy.com)** (also `literight.vercel.app`) | Vercel Hobby Tier | 🟢 Live |
-| **Backend API** | **Render** (`literight-api`) | **[https://literight-api.onrender.com](https://literight-api.onrender.com)** | Render Free / Starter Web Service | 🟢 Live (`/courses`, `/auth`) |
+| **Frontend Web** | **Vercel** (`litelab` team) | **[https://www.literiteacademy.com](https://www.literiteacademy.com)** (also `literight.vercel.app`) | Vercel Hobby Tier | 🟢 Live (100 GB free) |
+| **Backend API** | **Render** (`literight-api`) | **[https://literight-api.onrender.com](https://literight-api.onrender.com)** | Render Account | 🟢 **Subscribed Starter ($7/mo)** (24/7, 0 cold starts) |
 | **Cloud Database** | **Neon** (`quiet-voice-36935144`) | AWS Singapore (`ap-southeast-1`) | Neon Console (Free Tier, 500 MB) | 🟢 Connected (SSL required) |
-| **Video Engine** | **Cloudflare** (`Images & Stream`) | Cloudflare Dashboard (`ffa8a2c3ebeb376f70c33436e27e56b3`) | `Ifthikhar.ilyas@gmail.com` | 🟢 Subscribed (Starter Bundle $5/mo) |
+| **Video Engine** | **Cloudflare** (`Images & Stream`) | Cloudflare Dashboard (`ffa8a2c3ebeb376f70c33436e27e56b3`) | `Ifthikhar.ilyas@gmail.com` | 🟢 **Subscribed Starter ($5/mo)** (1k min store / 5k min stream) |
 | **Master Email** | **Google / Gmail** | `Literiteacademy@gmail.com` | Master Project Google Account | 🟢 Active |
 
 ---
 
-## 3. Real-Time Costing Audit (USD & INR)
+## 3. Real-Time Costing Audit & Commercial Unit Economics
 
-Calculated at reference conversion rate of **₹85 per $1 USD**:
+Calculated at standard reference conversion rate of **₹85 per $1 USD**:
 
-### Fixed Baseline Operational Cost
+### A. Fixed Baseline Operational Cost
 | Component | Plan | Monthly Cost (USD) | Monthly Cost (INR ₹) | Yearly Cost (INR ₹) |
 |---|---|---|---|---|
 | **Vercel** *(Frontend)* | Hobby Plan | **$0.00** | **₹0** | **₹0** *(100 GB traffic/mo)* |
@@ -44,10 +45,16 @@ Calculated at reference conversion rate of **₹85 per $1 USD**:
 | **Cloudflare Stream** *(Video)* | Starter Bundle | **$5.00 / mo** | **₹425 / mo** | — *(1,000 mins stored + 5k delivery)* |
 | **Resend** *(Email OTPs)* | Free Tier | **$0.00** | **₹0** | **₹0** *(3,000 emails/month free)* |
 | **GoDaddy** *(Domain)* | `.com` Registration | — | — | **~₹1,200 – ₹1,599 / year** |
-| **Stripe** *(Payments)* | Pay-As-You-Go | **$0.00 / mo** | **₹0 / mo** | **₹0** *(2.9% + 30¢ only per sale)* |
+| **Payment Gateway** *(Razorpay)* | Pay-As-You-Go | **$0.00 / mo** | **₹0 / mo** | **₹0** *(~2% to 2.3% per sale)* |
 | **TOTAL FIXED MONTHLY** | | **$12.00 / mo** | **~₹1,020 / mo** | **+ ₹1,599 / yr domain** |
 
-*Render Cold Start Note:* If keeping Render on Free ($0/mo), set up a free monitor on [UptimeRobot.com](https://uptimerobot.com) to ping `https://literight-api.onrender.com/courses` every 10 minutes to prevent the 50-second sleep delay without paying $7.
+### B. Unit Economics for Mass-Market Courses (< ₹300)
+* **Selling Price:** ₹299 (or ₹199)
+* **Payment Gateway Cut:** ~₹7.05 per sale (at ₹299)
+* **Cloudflare Stream Video Delivery:** ~₹7.65 per student for 90-min course (after 5,000 free monthly minutes; billed at $1/1,000 mins = 8.5 paise/min)
+* **Net Profit per Student:** **~₹284.30** per student (**~95% net profit margin**)
+* **Break-Even Point:** **Only 4 course sales per month** covers the entire fixed hosting bill (Render + Cloudflare Stream).
+* **Reference Guides:** See [`COST_AND_SCALING_GUIDE.md`](./COST_AND_SCALING_GUIDE.md) and [`COST_AND_SCALING_SHEET.csv`](./COST_AND_SCALING_SHEET.csv).
 
 ---
 
@@ -80,22 +87,20 @@ VITE_STRIPE_PUBLISHABLE_KEY=pk_live_...
 
 ## 5. Architectural Decisions & Trade-Offs Evaluated
 
-1. **Why Cloudflare Stream over Self-Hosted Video on VPS:**
-   - Raw MP4s served from local disk cause buffering on mobile/4G, saturate VPS CPU during concurrent student viewing, and can be pirated with 1 click ("Save Video As").
-   - Cloudflare Stream provides encrypted HLS chunks, adaptive 1080p/720p/480p scaling, and tokenized DRM protection for $5/mo.
-2. **Render vs KVM VPS (Hostinger / Hetzner):**
-   - A KVM VPS gives more raw RAM for $4.20/mo, but requires manual Linux OS patching, Nginx maintenance, and manual SSL renewal.
-   - Render + Vercel provides zero-maintenance automated Git-push deployments.
-3. **Database Architecture:**
-   - Transitioned from local SQLite to Neon PostgreSQL with dynamic `DATABASE_URL` and SSL. Updated entity columns to `@UpdateDateColumn` and `timestamp`.
-4. **Vercel Reverse Proxy Architecture:**
-   - `vercel.json` rewrites `/api/(.*)` to `https://literight-api.onrender.com/$1` to avoid CORS issues and simplify frontend fetch calls.
+1. **Render Starter Subscription ($7/mo):**
+   - Eliminates the 50-second cold start on free web services. Students receive instantaneous authentication, course loading, and quiz grading 24/7.
+2. **Cloudflare Stream Subscription ($5/mo Starter):**
+   - Delivers encrypted HLS video chunks with tokenized DRM to prevent piracy.
+   - Includes 1,000 stored minutes and 5,000 minutes streamed per month. Overages are billed at $1/1,000 minutes (8.5 paise/min).
+3. **Mass-Market Pricing (< ₹300 / course):**
+   - High volume, low ticket model. At ₹299, technology infrastructure represents less than 5% of monthly revenue at 100+ students.
+4. **Consolidated Workspace Repository:**
+   - Unified `literight`, `literite`, and `SliceClass` into `A-Generative-Slice/literite.git` located at `D:\hussain\literite`.
+   - Purged obsolete Group B and Group C external repositories from local storage.
 
 ---
 
 ## 6. Commercial Readiness Checklist (Pending Implementation)
-
-The remaining tasks to make the platform 100% commercially ready:
 
 - [ ] **1. Cloudflare Stream Player Integration:**
   - Replace static placeholder in `src/pages/CourseDetail.jsx` (`<div ...>▶</div>`) with the Cloudflare Stream responsive player:
@@ -110,25 +115,15 @@ The remaining tasks to make the platform 100% commercially ready:
 - [ ] **2. Resend Custom Domain Verification:**
   - In Resend, add `literiteacademy.com`, obtain the 3 DNS records (SPF, DKIM, DMARC), and add them into GoDaddy DNS.
   - Update `backend/src/auth/email.service.ts` to dispatch OTP verification codes via Resend API from `noreply@literiteacademy.com`.
-- [ ] **3. Stripe / Razorpay Course Checkout:**
-  - Replace `onClick={() => alert('Upgrade Flow')}` in `CourseDetail.jsx` with a real checkout flow for the $199 course.
+- [ ] **3. Payment Gateway Integration (Razorpay / Stripe for < ₹300 courses):**
+  - Implement UPI/Card checkout for the course price (e.g. ₹299).
   - Add backend webhook to flip `user.isPremium = true` in Neon DB upon successful payment.
 - [ ] **4. Backend Security Hardening:**
   - Install `bcrypt` and migrate from un-salted SHA-256 (`auth.service.ts`).
-  - Parameterize `JWT_SECRET` via `ConfigService` (remove hardcoded `LITERIGHT_SECRET_KEY_12345`).
+  - Parameterize `JWT_SECRET` via `ConfigService`.
   - Remove backdoor `Admin`/`Admin` fallback in `auth.service.ts`.
 - [ ] **5. Legal & Compliance Pages:**
   - Add Privacy Policy, Terms of Service, and Refund Policy links to `src/components/Footer.jsx`.
 
 ---
-
-## 7. Mobile App Roadmap (Capacitor)
-
-To compile this React 19 app into an Android APK in the future:
-1. `npm install @capacitor/core @capacitor/cli @capacitor/android`
-2. `npx cap init "LiteRight Academy" "com.literite.academy"`
-3. `npx cap add android && npm run build && npx cap copy`
-4. Open in Android Studio and build the `.apk` file for direct download or Google Play Store.
-
----
-*Created on 2026-09-30 by Antigravity Technical Architecture Team.*
+*Last updated on 2026-09-30 — Context memory synchronized with GitHub repository.*
