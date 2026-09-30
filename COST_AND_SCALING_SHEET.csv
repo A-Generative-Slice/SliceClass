@@ -1,8 +1,9 @@
-﻿Category,Item,Provider,Free Tier Limit,Paid Monthly Cost (USD),Paid Monthly Cost (INR),What It Does (Simple Explanation)
-Baseline Setup,Domain Name (.com),GoDaddy,None,.00 / mo,"~₹1,200 / year (₹100/mo)","Your web address (e.g. www.literiteacademy.com)"
-Frontend,Website Hosting,Vercel,100 GB Bandwidth (~100k views/mo),.00,,"Displays the website, pages, buttons, and animations"
-Backend,Server Engine,Render,750 Free Hours / month,.00,,"Processes logins, course progress, quizzes, and data"
-Database,Data Storage,Neon (PostgreSQL),500 MB (Stores 50k+ students),.00,,"Safely stores student accounts, passwords, and progress"
-Email,Login & OTP Emails,Resend,3000 emails/month (100/day),.00,,"Sends 6-digit OTP codes and password reset links"
-Video,Course Video Player,Cloudflare Stream,None (Free if using unlisted YouTube),.00,,"Smooth, anti-piracy video player for course lessons"
-Payments,Credit Card / UPI,Stripe / Razorpay,Free setup (2% - 3% per sale),.00,,"Collects course fees from students into your bank account"
+﻿Category,Item,Provider,Free Tier Limit,Monthly Cost (INR),Impact on a < ₹300 Course
+Domain,Custom Address (.com),GoDaddy,None,~₹100 / mo (₹1200/yr),Paid once a year; covered by 4 sales
+Frontend,Website Hosting,Vercel,100 GB (~100k views/mo),₹0 / mo,100% Free for high traffic
+Backend API,Server Engine,Render,750 Free Hours / month,"₹0 (Free) or ₹595 (24/7)",Zero cost on free tier; ₹595 for no sleep
+Database,Student Data,Neon (PostgreSQL),500 MB (50k+ students),₹0 / mo,100% Free storage for tens of thousands of users
+Email,Login & OTP Codes,Resend,3000 emails / month,₹0 / mo,100% Free (covers 100 logins/signups daily)
+Video (Option 1),YouTube Unlisted,YouTube,Unlimited Views,₹0 / mo,100% Free video delivery for budget courses
+Video (Option 2),Protected Streaming,Cloudflare / BunnyCDN,5000 mins free on Starter bundle,~₹425 / mo,Adds anti-download protection for ₹425/mo
+Payment Gateway,UPI / Cards / NetBanking,Razorpay / Cashfree,No setup fee (~2% per sale),~₹5 to ₹7 per sale,Only deducted when a student actually pays
