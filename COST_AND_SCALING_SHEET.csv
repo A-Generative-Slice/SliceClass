@@ -1,0 +1,8 @@
+﻿Category,Item,Provider,Free Tier Limit,Paid Monthly Cost (USD),Paid Monthly Cost (INR),What It Does (Simple Explanation)
+Baseline Setup,Domain Name (.com),GoDaddy,None,.00 / mo,"~₹1,200 / year (₹100/mo)","Your web address (e.g. www.literiteacademy.com)"
+Frontend,Website Hosting,Vercel,100 GB Bandwidth (~100k views/mo),.00,,"Displays the website, pages, buttons, and animations"
+Backend,Server Engine,Render,750 Free Hours / month,.00,,"Processes logins, course progress, quizzes, and data"
+Database,Data Storage,Neon (PostgreSQL),500 MB (Stores 50k+ students),.00,,"Safely stores student accounts, passwords, and progress"
+Email,Login & OTP Emails,Resend,3000 emails/month (100/day),.00,,"Sends 6-digit OTP codes and password reset links"
+Video,Course Video Player,Cloudflare Stream,None (Free if using unlisted YouTube),.00,,"Smooth, anti-piracy video player for course lessons"
+Payments,Credit Card / UPI,Stripe / Razorpay,Free setup (2% - 3% per sale),.00,,"Collects course fees from students into your bank account"
