@@ -1,9 +1,10 @@
-﻿Category,Item,Provider,Free Tier Limit,Monthly Cost (INR),Impact on a < ₹300 Course
-Domain,Custom Address (.com),GoDaddy,None,~₹100 / mo (₹1200/yr),Paid once a year; covered by 4 sales
-Frontend,Website Hosting,Vercel,100 GB (~100k views/mo),₹0 / mo,100% Free for high traffic
-Backend API,Server Engine,Render,750 Free Hours / month,"₹0 (Free) or ₹595 (24/7)",Zero cost on free tier; ₹595 for no sleep
-Database,Student Data,Neon (PostgreSQL),500 MB (50k+ students),₹0 / mo,100% Free storage for tens of thousands of users
-Email,Login & OTP Codes,Resend,3000 emails / month,₹0 / mo,100% Free (covers 100 logins/signups daily)
-Video (Option 1),YouTube Unlisted,YouTube,Unlimited Views,₹0 / mo,100% Free video delivery for budget courses
-Video (Option 2),Protected Streaming,Cloudflare / BunnyCDN,5000 mins free on Starter bundle,~₹425 / mo,Adds anti-download protection for ₹425/mo
-Payment Gateway,UPI / Cards / NetBanking,Razorpay / Cashfree,No setup fee (~2% per sale),~₹5 to ₹7 per sale,Only deducted when a student actually pays
+﻿Category,Item,Provider,Plan,Monthly Cost (USD),Monthly Cost (INR),Included Quota / Usage Note
+Backend Server,API & Logic,Render,Starter Plan,.00 / mo,₹595 / mo,24/7 dedicated server (zero lag 0 sleep)
+Video Hosting,Stream Engine,Cloudflare,Starter Bundle,.00 / mo,₹425 / mo,"1000 mins storage (~16 hrs) + 5000 mins streaming included"
+Video Overage,Extra Viewing,Cloudflare,Pay-As-You-Go,.00 / 1000 mins,~₹85 per 1000 mins,"Only 8.5 paise/min (approx. ₹5 to ₹7.50 per student course)"
+Frontend Web,User Interface,Vercel,Hobby Tier,.00 / mo,₹0 / mo,100 GB bandwidth (100k+ visits/mo free)
+Database,Student Records,Neon,Free Tier,.00 / mo,₹0 / mo,500 MB storage (holds 50k+ students free)
+Email Service,Login & OTPs,Resend,Free Tier,.00 / mo,₹0 / mo,3000 emails/mo (100 free OTPs/day)
+Custom Domain,Web Address,GoDaddy,.com Annual,.00 / mo,~₹100 / mo (₹1200/yr),Paid once per year
+Payment Gateway,UPI & Cards,Razorpay / Cashfree,Transaction Fee,.00 / mo,~2% to 2.3% per sale,Only charged when student pays
+TOTAL FIXED BILL,All Services,Combined,Render + Cloudflare,.00 / mo,~₹1020 / mo,Covers platform 24/7 (break-even at 4 course sales)
