@@ -71,4 +71,17 @@ This document tracks the architectural growth and bug fixes of the Literight Aca
 - **Development Credits:** Integrated the "Designed and Developed by A Generative Slice" attribution with vibrant orange branding.
 
 ---
-*Last updated: 2026-04-20T19:30:00Z by Antigravity*
+
+## ☁️ Phase 7: Cloud Production Architecture & Decoupled SaaS Transition
+**Timestamp:** 2026-09-15 – 2026-09-30
+- **Production Domain & DNS:** Registered `literiteacademy.com` on GoDaddy (active through Sep 2028), configured DNS routing and automated SSL certification to Vercel edge nodes.
+- **Frontend Cloud Deployment (Vercel):** Deployed React 19 SPA to Vercel (`literight.vercel.app` mapped to `https://www.literiteacademy.com`), configured `vercel.json` rewrites for SPA routing and `/api/(.*)` reverse proxying.
+- **Backend API Cloud Deployment (Render):** Deployed NestJS 11 backend service to Render (`https://literight-api.onrender.com`).
+- **Database Cloud Migration (Neon PostgreSQL):** Transitioned from local SQLite to Neon Serverless PostgreSQL hosted in AWS Asia Pacific 1 (Singapore region) with dynamic `DATABASE_URL` and SSL. Updated TypeORM entities (`@UpdateDateColumn`, `timestamp`).
+- **Video Delivery Architecture (Cloudflare Stream):** Subscribed to Cloudflare Stream Starter Bundle ($5/mo for 1,000 mins stored, 5,000 mins delivery, 100k images) for adaptive 1080p/720p/480p HLS playback and anti-piracy protection.
+- **Cost Optimization & Real-Time Audit:** Formulated complete commercial budget: fixed baseline at ~$12/month (~₹1,020/mo) across Render and Cloudflare Stream, with Vercel, Neon DB, Resend, and Stripe on $0 free tiers.
+- **Mobile Roadmap:** Defined Capacitor wrapper strategy for compiling existing React 19 code into an Android APK / Google Play store app.
+
+---
+*Last updated: 2026-09-30 by Antigravity*
+
