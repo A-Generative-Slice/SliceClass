@@ -9,6 +9,14 @@ export class Course {
   @Column()
   title: string;
 
+  // Stable identifier for courses that are seeded from code (see courses/seed).
+  @Column({ nullable: true })
+  slug: string;
+
+  // Which version of the seed content is currently stored in the database.
+  @Column({ default: 0 })
+  seedVersion: number;
+
   @Column({ nullable: true })
   instructor: string;
 

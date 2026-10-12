@@ -15,6 +15,10 @@ export class Lesson {
   @Column({ type: 'text', nullable: true })
   description: string;
 
+  // Full lesson body (HTML). Used for text-based lessons until videos are uploaded.
+  @Column({ type: 'text', nullable: true })
+  content: string;
+
   @Column({ nullable: true })
   sourceMaterial: string;
 

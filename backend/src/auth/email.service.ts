@@ -92,7 +92,7 @@ export class EmailService {
           <p style="color: #ffffff; font-size: 15px; font-weight: 700; margin: 4px 0;">✦ &nbsp;Direct Career Placement Support</p>
         </div>
 
-        <a href="https://literight.centralindia.cloudapp.azure.com"
+        <a href="${process.env.FRONTEND_URL || 'https://www.literiteacademy.com'}"
            style="display: inline-block; background: ${BRAND_RED}; color: #ffffff; text-decoration: none; font-size: 15px; font-weight: 700; padding: 14px 36px; border-radius: 10px; letter-spacing: 0.04em;">
           Start Learning Now →
         </a>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { PlayCircle, CheckCircle2, ChevronRight, Lock, HelpCircle } from 'lucide-react';
+import { PlayCircle, CheckCircle2, ChevronRight, Lock, BookOpen } from 'lucide-react';
 import { C } from './Common';
+import { SEQUENTIAL_UNLOCK } from '../config';
 
-const Syllabus = ({ course, progress, onSelectLesson, isLoggedIn }) => {
+const Syllabus = ({ course, progress, onSelectLesson, isLoggedIn, activeLessonId }) => {
   const [openChapters, setOpenChapters] = useState({ 0: true });
   if (!course || !course.chapters) return null;
 
@@ -18,6 +19,7 @@ const Syllabus = ({ course, progress, onSelectLesson, isLoggedIn }) => {
   };
 
   const isChapterLocked = (chapterIndex) => {
+    if (!SEQUENTIAL_UNLOCK) return false;
     if (!isLoggedIn) return false;
     if (chapterIndex === 0) return false;
     const prev = getChapterProgress(chapterIndex - 1);
@@ -75,28 +77,38 @@ const Syllabus = ({ course, progress, onSelectLesson, isLoggedIn }) => {
                 <div style={{ padding: '0 24px 24px', display: 'flex', flexDirection: 'column', gap: 4 }}>
                   {chapter.lessons.map((lesson) => {
                     const completed = progress && progress[lesson.id]?.completed;
+                    const isActive = activeLessonId === lesson.id;
                     return (
                       <div 
                         key={lesson.id}
-                        onClick={() => onSelectLesson({ ...lesson, type: 'video' })}
+                        onClick={() => onSelectLesson({ ...lesson, chId: chapter.id, type: lesson.videoUrl ? 'video' : 'text' })}
                         style={{ 
                           padding: '12px 14px', 
                           display: 'flex', 
                           alignItems: 'center', 
                           justifyContent: 'space-between', 
                           cursor: 'pointer', 
-                          background: 'rgba(0, 0, 0, 0.02)', 
-                          border: '1px solid rgba(0, 0, 0, 0.06)', 
+                          background: isActive ? '#000' : 'rgba(0, 0, 0, 0.02)', 
+                          color: isActive ? '#fff' : '#000',
+                          border: `1px solid ${isActive ? '#000' : 'rgba(0, 0, 0, 0.06)'}`, 
                           transition: '0.2s'
                         }}
-                        onMouseEnter={e => e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.2)'}
-                        onMouseLeave={e => e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.06)'}
+                        onMouseEnter={e => { if (!isActive) e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.2)'; }}
+                        onMouseLeave={e => { if (!isActive) e.currentTarget.style.borderColor = 'rgba(0, 0, 0, 0.06)'; }}
                       >
                         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                          {completed ? <CheckCircle2 size={12} color="#000" /> : <PlayCircle size={12} color="#000" opacity={0.4} />}
-                          <span style={{ fontSize: 12, fontWeight: 700, color: completed ? '#888' : '#000' }}>{lesson.title.toUpperCase()}</span>
+                          {completed ? (
+                            <CheckCircle2 size={12} color={isActive ? '#fff' : '#000'} />
+                          ) : (
+                            <BookOpen size={12} color={isActive ? '#fff' : '#000'} opacity={isActive ? 1 : 0.5} />
+                          )}
+                          <span style={{ fontSize: 12, fontWeight: 700, color: isActive ? '#fff' : completed ? '#888' : '#000' }}>
+                            {lesson.title.toUpperCase()}
+                          </span>
                         </div>
-                        <div style={{ fontSize: 8, fontWeight: 900, color: '#888' }}>VIDEO</div>
+                        <div style={{ fontSize: 8, fontWeight: 900, color: isActive ? '#ccc' : '#888', letterSpacing: '0.05em' }}>
+                          {lesson.duration || (lesson.content ? 'READING' : 'LESSON')}
+                        </div>
                       </div>
                     );
                   })}
