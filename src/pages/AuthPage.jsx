@@ -24,8 +24,9 @@ const AuthPage = ({ onBack }) => {
     setErr('');
     if (tab === 'signup' && form.password !== form.confirmPassword) return setErr('Passwords do not match.');
     
-    const action = tab === 'signup' ? signup : login;
-    const result = await action(form.username, form.password); 
+    const result = tab === 'signup' 
+      ? await signup(form.username, form.password, form.name)
+      : await login(form.username, form.password); 
     
     if (result.requiresVerification) {
       setStep('otp');

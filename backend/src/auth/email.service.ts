@@ -35,6 +35,9 @@ export class EmailService {
         user: process.env.GMAIL_USER || 's.m.d.hussainjoe@gmail.com',
         pass: process.env.GMAIL_PASS || 'pnsd qqut vfcb jylc',
       },
+      connectionTimeout: 4000,
+      greetingTimeout: 4000,
+      socketTimeout: 5000,
     });
   }
 

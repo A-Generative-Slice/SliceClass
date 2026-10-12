@@ -39,13 +39,19 @@ export const useLmsStore = create(
       },
 
       // Authentication
-      signup: async (username, password) => {
+      signup: async (username, password, name) => {
         set({ isLoading: true });
         try {
-          const res = await axios.post('/auth/signup', { username, password });
+          const res = await axios.post('/auth/signup', { username, password, name });
           if (res.data.requiresVerification) {
             set({ isLoading: false });
             return { requiresVerification: true, email: res.data.email };
+          }
+          if (res.data.access_token) {
+            const { user, access_token } = res.data;
+            set({ user, token: access_token, isLoading: false });
+          } else {
+            set({ isLoading: false });
           }
           return { success: true };
         } catch (error) {

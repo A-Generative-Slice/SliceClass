@@ -19,31 +19,36 @@ export class AuthService {
     return crypto.createHash('sha256').update(password).digest('hex');
   }
 
-  async signup(username: string, pass: string) {
+  async signup(username: string, pass: string, name?: string) {
     if (!username || !pass) throw new UnauthorizedException('Please provide both email and password.');
     
     let user = await this.userRepository.findOne({ where: { username } });
     if (user) {
+      // If user already exists and password matches, log them right in
+      if (user.passwordHash === this.hashPassword(pass)) {
+        user.isVerified = true;
+        if (name && !user.name) user.name = name;
+        await this.userRepository.save(user);
+        return this.generateToken(user);
+      }
       throw new UnauthorizedException('Account already exists. Please log in.');
     }
     
-    // New user
+    // New user - auto-verify so testing across the company works smoothly
     user = this.userRepository.create({ 
       username, 
       passwordHash: this.hashPassword(pass),
+      name: name || username.split('@')[0],
       role: 'student', 
-      isVerified: false 
+      isVerified: true 
     });
     await this.userRepository.save(user);
 
-    // Generate and send OTP
-    const otp = Math.floor(100000 + Math.random() * 900000).toString();
-    user.otpCode = otp;
-    user.otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
-    await this.userRepository.save(user);
-    await this.emailService.sendOtp(user.username, otp);
+    // Fire welcome email asynchronously without blocking the HTTP response
+    this.emailService.sendWelcome(user.username).catch(() => {});
     
-    return { requiresVerification: true, email: user.username, context: 'signup' };
+    // Return token directly for instant login
+    return this.generateToken(user);
   }
 
   async login(username: string, pass: string) {
@@ -71,14 +76,10 @@ export class AuthService {
       throw new UnauthorizedException('Wrong password. Please try again or use Forgot Password.');
     }
 
+    // Auto-verify if unverified from previous attempts
     if (!user.isVerified) {
-      const otp = Math.floor(100000 + Math.random() * 900000).toString();
-      user.otpCode = otp;
-      user.otpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+      user.isVerified = true;
       await this.userRepository.save(user);
-      await this.emailService.sendOtp(user.username, otp);
-      
-      return { requiresVerification: true, email: user.username, context: 'login' };
     }
 
     return this.generateToken(user);
